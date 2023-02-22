@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import paysage1 from '../assets/paysage1.png'
 import paysage2 from '../assets/paysage2.png'
 
+// CSS
 const ImgContainer = styled.div`
 	position: relative;
 	height: 223px;
@@ -54,8 +55,10 @@ const StyledText = styled.p`
 	}
 `
 
+// Component
 function Banner({ page, message, variation }) {
 	return (
+		// Variation is used to slightly change the style of the Banner (height)
 		<ImgContainer variation={variation}>
 			{page === 'Home' ? (
 				<StyledImg src={paysage1} />

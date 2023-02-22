@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../assets/logo.svg'
 
+// CSS
 const HomeLogo = styled.img`
 	height: 62px;
 	@media screen and (max-width: 1200px) {
@@ -45,15 +46,18 @@ const StyledLink = styled(NavLink)`
 	}
 `
 
+// Component
 function Header() {
 	return (
 		<NavContainer>
+			{/* Using the React Router navigation */}
 			<Link to="/">
 				<HomeLogo src={logo} />
 			</Link>
 			<div>
 				<StyledLink
 					to="/"
+					// isActive is a function of NavLink in React Router for determining whether the link is active. In this case, apply the .active class
 					className={({ isActive }) => (isActive ? 'active' : '')}
 				>
 					Accueil

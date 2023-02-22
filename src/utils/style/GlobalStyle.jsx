@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
+// Common style for all pages and components
 const Style = createGlobalStyle`
 	:root {
 		--primary-color: #ff6060;

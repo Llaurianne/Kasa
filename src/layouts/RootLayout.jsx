@@ -56,11 +56,7 @@ export default function RootLayout() {
 		<>
 			<GlobalStyle />
 			<Header />
-			{isDataLoading ? (
-				<Loader />
-			) : (
-				<Outlet context={[accList]} isDataLoading={isDataLoading} />
-			)}
+			{isDataLoading ? <Loader /> : <Outlet context={[accList]} />}
 			<Footer />
 		</>
 	)

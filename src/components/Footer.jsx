@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../assets/logo.svg'
 
+// CSS
 const HomeLogo = styled.img`
 	height: 36px;
 	filter: brightness(5) saturate(0%);
@@ -21,9 +22,11 @@ const StyledFooter = styled.footer`
 	text-align: center;
 `
 
+// Component
 function Footer() {
 	return (
 		<StyledFooter>
+			{/* Using the React Router navigation */}
 			<Link to="/">
 				<HomeLogo src={logo} />
 			</Link>

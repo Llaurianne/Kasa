@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+// CSS
 const CardContainer = styled(Link)`
 	position: relative;
 	height: 340px;
@@ -49,8 +50,10 @@ const StyledText = styled.p`
 	}
 `
 
+// Component
 function Card({ title, cover, id }) {
 	return (
+		// Properties of .rounded and .colored in GlobalStyle.jsx
 		<CardContainer className="rounded" to={`/accommodations/${id}`}>
 			<CardBackground src={cover} alt={title} className="colored" />
 			<StyledDiv>

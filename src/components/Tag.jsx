@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+// CSS
 const TagContainer = styled.div`
 	display: inline-block;
 	height: 25px;
@@ -19,6 +20,7 @@ const TagContainer = styled.div`
 	}
 `
 
+// Component
 function Tag({ value }) {
 	return <TagContainer className="rounded colored">{value}</TagContainer>
 }

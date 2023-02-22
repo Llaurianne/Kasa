@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 
+// CSS
 const DropdownContainer = styled.div`
 	flex: 1;
 	margin: 0 auto 31px;
@@ -67,27 +68,30 @@ const StyledList = styled.ul`
 	}
 `
 
+// Component
 function Dropdown({ content, title, variation }) {
+	// Storage of the open or closed state of the component
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
+		// Variation is used to slightly change the style of the Dropdown (height)
 		<DropdownContainer
-			className={`${!variation && 'rounded'} grey`}
+			className="rounded grey"
 			state={isOpen}
 			variation={variation}
 		>
-			<Name
-				className={`${!variation && 'rounded'} colored`}
-				variation={variation}
-			>
+			<Name className="rounded colored" variation={variation}>
 				<span>{title}</span>
 				<span
 					className={`material-symbols-outlined ${isOpen && 'open'}`}
+					// Change the state on click
 					onClick={() => setIsOpen(!isOpen)}
 				>
 					expand_more
 				</span>
 			</Name>
+
+			{/* Display list only if state isOpen = true */}
 			{isOpen && (
 				<StyledList>
 					{Array.isArray(content) ? (

@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 import Card from '../components/Card'
 import Banner from '../components/Banner'
 
+// CSS
 const CardsGrid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -25,6 +26,7 @@ const CardsGrid = styled.div`
 	}
 `
 
+// Page
 function Home() {
 	const [accList] = useOutletContext()
 
@@ -32,6 +34,7 @@ function Home() {
 		<main>
 			<Banner page={'Home'} message={'Chez vous, partout et ailleurs'} />
 			<CardsGrid className="rounded grey">
+				{/* Using of maps method the create the grid from array accList */}
 				{accList.map((acc) => (
 					<Card
 						key={acc.id}

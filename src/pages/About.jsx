@@ -1,6 +1,7 @@
 import Banner from '../components/Banner'
 import Dropdown from '../components/Dropdown'
 
+// Page
 function About() {
 	const about = [
 		{
@@ -27,8 +28,10 @@ function About() {
 
 	return (
 		<main>
+			{/* Banner component with style variation */}
 			<Banner page={'About'} variation={true} />
 			{about.map((elt) => (
+				// Dropdown component with style variation
 				<Dropdown
 					key={elt.title}
 					title={elt.title}

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 
+// CSS
 const ImgContainer = styled.div`
 	position: relative;
 	height: 415px;
@@ -58,15 +59,19 @@ const Number = styled.span`
 	}
 `
 
+// Component
 function Slideshow({ pictures }) {
+	// Storage of the displayed picture number in the state
 	const [actualPic, setActualPic] = useState(pictures[0])
 
 	return (
 		<ImgContainer>
+			{/* Display arrows and number only if there are more than 1 picture */}
 			{pictures.length > 1 && (
 				<>
 					<Arrow
 						className="material-symbols-outlined big left"
+						// Change the state on click (go to previous picture)
 						onClick={() =>
 							pictures.indexOf(actualPic) === 0
 								? setActualPic(pictures[pictures.length - 1])
@@ -81,6 +86,7 @@ function Slideshow({ pictures }) {
 					</Arrow>
 					<Arrow
 						className="material-symbols-outlined big right"
+						// Change the state on click (go to next picture)
 						onClick={() =>
 							pictures.indexOf(actualPic) + 1 === pictures.length
 								? setActualPic(pictures[0])

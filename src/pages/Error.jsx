@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+// CSS
 const ErrorContainer = styled.div`
 	text-align: center;
 	& a {
@@ -21,11 +22,13 @@ const ErrorMsg = styled.p`
 	margin-bottom: 120px;
 `
 
+// Page
 function Error() {
 	return (
 		<ErrorContainer>
 			<ErrorNb>404</ErrorNb>
 			<ErrorMsg>Oups! La page que vous demandez n'existe pas.</ErrorMsg>
+			{/* Using the React Router navigation */}
 			<Link to="/">Retourner à la page d'accueil</Link>
 		</ErrorContainer>
 	)

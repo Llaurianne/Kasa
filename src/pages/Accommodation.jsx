@@ -4,6 +4,7 @@ import { useOutletContext, useParams, Navigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Slideshow from '../components/Slideshow'
 
+// CSS
 const InfosContainer = styled.div`
 	display: flex;
 	@media screen and (max-width: 768px) {
@@ -109,16 +110,24 @@ const DetailsContainer = styled.div`
 	}
 `
 
+// Page
 function Accommodation() {
+	// Get the id of the accommodation in the url
 	const { accId } = useParams()
+	// Get the list of all accommodations from context provider of React Router
 	const [accList] = useOutletContext()
+	// Search for the current accommodation in the list
 	const currentAcc = accList.find((acc) => acc.id === accId)
+	// Range of rating
 	const range = [1, 2, 3, 4, 5]
 
+	// Return the page only if an accommodation exists with this id
 	return currentAcc === undefined ? (
+		// Navigate component of react router changes the current location when it is rendered, here when there is no corresponding accommodation
 		<Navigate to={'/error'} />
 	) : (
 		<main>
+			{/* Slideshow component */}
 			<Slideshow pictures={currentAcc.pictures} />
 			<InfosContainer>
 				<StyledDiv>
@@ -161,6 +170,7 @@ function Accommodation() {
 			</InfosContainer>
 
 			<DetailsContainer>
+				{/* Dropdown component */}
 				<Dropdown
 					content={currentAcc.description}
 					title="Description"
